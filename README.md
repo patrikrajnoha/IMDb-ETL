@@ -39,7 +39,7 @@ Navrhnutý bol hviezdicový model (**star schema**), ktorý slúži na efektívn
 #### Hviezdicová schéma
 Struktúra hviezdicového modelu je znázornená na diagrame nižšie, kde faktová tabuľka spája dimenzionálne tabuľky:
 
-![Hviezdicový model](https://github.com/patrikrajnoha/IMDb-ETL/blob/f0996253cf266406233c2b03f563dff288ac71e5/star_schema.png)
+![Hviezdicový model](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/star_schema.png)
 
 *Obrázok 2: Hviezdicový model znázorňuje faktovú tabuľku `fact_ratings` a jej prepojenie s dimenziami. Tento model podporuje rýchle dotazovanie a analytické výpočty, napríklad analýzu hodnotení podľa žánrov, času alebo krajín.*
 
