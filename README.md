@@ -40,7 +40,7 @@ Navrhnutý bol hviezdicový model (**star schema**), ktorý slúži na efektívn
 - **sdim_genre**: Špecifické údaje o žánroch filmov.
 
 #### Hviezdicová schéma
-Štruktúra hviezdicového modelu je znázornená na diagrame nižšie, kde faktová tabuľka spája dimenzionálne tabuľky:
+Struktúra hviezdicového modelu je znázornená na diagrame nižšie, kde faktová tabuľka spája dimenzionálne tabuľky:
 
 ![Hviezdicový model](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/star_schema.png)
 
@@ -116,6 +116,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
 ### Grafy a vizualizácie:
 
 1. **Top 5 spoločností s hodnoteniami nad priemerom**
+   Tento graf zobrazuje päť spoločností s najvyšším priemerným hodnotením filmov, ktoré presahujú celkový priemer hodnotení. Pomáha identifikovať spoločnosti, ktoré produkujú kvalitné filmy.
    ```sql
    WITH
        avg_rating AS (
@@ -138,6 +139,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
    ![Graf 1](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/grafy/graf_4.png)
 
 2. **Počet filmov s priemerným hodnotením medzi 7 a 8**
+   Tento graf ukazuje celkový počet filmov, ktoré majú hodnotenie v rozmedzí 7 až 8. Pomáha pochopiť, koľko filmov spadá do tejto hodnotiacej kategórie.
    ```sql
    SELECT COUNT(*) AS movie_count
    FROM ratings
@@ -147,6 +149,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
    ![Graf 2](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/grafy/graf_1.png)
 
 3. **Top tri krajiny s najvyšším počtom filmov**
+   Graf zobrazuje tri krajiny, ktoré produkovali najväčší počet filmov. Táto informácia môže byť užitočná na identifikáciu dominantných hráčov vo filmovom priemysle podľa krajiny.
    ```sql
    SELECT country, COUNT(*) AS movie_count
    FROM movie
@@ -158,6 +161,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
    ![Graf 3](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/grafy/graf_3.png)
 
 4. **Najčastejšie žánre vo filmoch s hodnotením > 8**
+   Tento graf ukazuje najčastejšie žánre vo filmoch, ktoré získali hodnotenie vyššie ako 8. Pomáha identifikovať populárne žánre medzi vysoko hodnotenými filmami.
    ```sql
    SELECT g.genre, COUNT(*) AS genre_count
    FROM genre g
@@ -172,6 +176,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
    ![Graf 4](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/grafy/graf_5.png)
 
 5. **Priemerná dĺžka filmov podľa krajiny produkcie**
+   Graf zobrazuje priemernú dĺžku filmov pre každú krajinu produkcie. Pomáha pochopiť rozdiely v dĺžke filmov medzi jednotlivými krajinami.
    ```sql
    SELECT m.country, AVG(m.duration) AS avg_duration
    FROM movie m
@@ -184,6 +189,7 @@ Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na an
    ![Graf 5](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/grafy/graf_6.png)
 
 6. **Filmy s najviac hlasmi v každom roku**
+   Tento graf zobrazuje filmy, ktoré získali najviac hlasov v každom roku. Pomáha identifikovať najpopulárnejšie filmy v daných rokoch.
    ```sql
    WITH
        yearly_max_votes AS (
