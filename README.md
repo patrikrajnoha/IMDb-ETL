@@ -14,7 +14,7 @@ IMDb dataset obsahuje rôznorodé informácie o filmoch, hercoch, režiséroch a
 - **`movie.csv`**: Detailné údaje o filmoch, vrátane názvu, roku vydania, trvania a produkčnej spoločnosti.
 - **`names.csv`**: Základné údaje o hercoch a režiséroch, ako sú meno a dátum narodenia.
 - **`ratings.csv`**: Hodnotenia filmov od používateľov, vrátane priemernej hodnoty, mediánu a počtu hlasov.
-- **`role_mapping.csv`**: údeje o úlohách hercov v jednotlivých filmoch.
+- **`role_mapping.csv`**: údaje o úlohách hercov v jednotlivých filmoch.
 
 Tieto dáta boli transformované a načítané do Snowflake pomocou ETL procesu, aby boli optimalizované pre analytické úlohy.
 
@@ -40,7 +40,7 @@ Navrhnutý bol hviezdicový model (**star schema**), ktorý slúži na efektívn
 - **sdim_genre**: Špecifické údaje o žánroch filmov.
 
 #### Hviezdicová schéma
-Struktúra hviezdicového modelu je znázornená na diagrame nižšie, kde faktová tabuľka spája dimenzionálne tabuľky:
+Štruktúra hviezdicového modelu je znázornená na diagrame nižšie, kde faktová tabuľka spája dimenzionálne tabuľky:
 
 ![Hviezdicový model](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/star_schema.png)
 
@@ -106,6 +106,12 @@ LEFT JOIN
 ---
 
 ## 4. Vizualizácia dát
+
+### Dashboard
+
+Celkový dashboard znázorňuje vizualizácie hlavných metrík a odpovede na analytické otázky.
+
+![Dashboard](https://github.com/patrikrajnoha/IMDb-ETL/blob/main/imdb_dashboard.png)
 
 ### Grafy a vizualizácie:
 
